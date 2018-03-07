@@ -1,8 +1,8 @@
-package com.webdriver.tests.pages;
+package com.webdriver.tests.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -28,6 +28,10 @@ public class HomePage extends BasePage{
     //Dropdown suggestions
     @FindBy(xpath = ".//*[@id='suggestions']/div")
     private WebElement welEl_suggestions;
+
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
 
 
     public void lookfor(String object){

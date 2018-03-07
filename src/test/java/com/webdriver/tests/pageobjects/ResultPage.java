@@ -1,6 +1,6 @@
-package com.webdriver.tests.pages;
+package com.webdriver.tests.pageobjects;
 
-import com.webdriver.tests.utility.GeneralUtils;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,6 +23,10 @@ public class ResultPage extends BasePage{
     //Item results title
     @FindBy(xpath = "//*[@id='s-results-list-atf']//li[contains(@id,'result_')]//a[contains(@class,'s-access-detail-page')]")
     private List<WebElement> webEl_resultTitle;
+
+    public ResultPage(WebDriver driver) {
+        super(driver);
+    }
 
 
     public String getResults(){

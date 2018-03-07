@@ -1,6 +1,6 @@
-package com.webdriver.tests.pages;
+package com.webdriver.tests.pageobjects;
 
-import com.webdriver.tests.utility.GeneralUtils;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +11,10 @@ public class DetailPage extends BasePage{
     //Text title
     @FindBy(id = "productTitle")
     private WebElement text_title;
+
+    public DetailPage(WebDriver driver) {
+        super(driver);
+    }
 
     public boolean prodTitleIsDisplayed(){
         new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf(text_title));

@@ -1,17 +1,22 @@
-package com.webdriver.tests.stepsDef;
+package com.webdriver.tests.stepdefinitions;
 
-import com.webdriver.tests.pages.BasePage;
-import com.webdriver.tests.pages.DetailPage;
-import com.webdriver.tests.pages.HomePage;
-import com.webdriver.tests.pages.ResultPage;
+import com.webdriver.tests.pageobjects.BasePage;
+import com.webdriver.tests.pageobjects.DetailPage;
+import com.webdriver.tests.pageobjects.HomePage;
+import com.webdriver.tests.pageobjects.ResultPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class SearchStepDef  extends BasePage{
+
+    public SearchStepDef(WebDriver driver) {
+        super(driver);
+    }
 
     @Given("^I am at the home page$")
     public void iAmAtTheHomePage() throws Throwable {

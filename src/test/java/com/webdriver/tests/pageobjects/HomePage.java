@@ -12,6 +12,10 @@ import java.util.List;
 
 public class HomePage extends BasePage{
 
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
+
     //Field search
     @FindBy(id = "twotabsearchtextbox")
     private WebElement fld_search;
@@ -29,11 +33,6 @@ public class HomePage extends BasePage{
     @FindBy(xpath = ".//*[@id='suggestions']/div")
     private WebElement welEl_suggestions;
 
-    public HomePage(WebDriver driver) {
-        super(driver);
-    }
-
-
     public void lookfor(String object){
         new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf(fld_search));
         fld_search.sendKeys(object);
@@ -49,7 +48,7 @@ public class HomePage extends BasePage{
         new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(welEl_suggestions));
         List<WebElement> alldropdownitems = driver.findElements(By.xpath(".//*[@id='suggestions']/div"));
         int size = alldropdownitems.size();
-        for (int i = 1; i <= size; i++) {
+        for (int i = 1; i < size; i++) {
 
             if (alldropdownitems.get(i).getText().equalsIgnoreCase(itemSearched)) {
                 alldropdownitems.get(i).click();

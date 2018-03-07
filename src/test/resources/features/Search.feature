@@ -9,4 +9,4 @@ Feature: Search
     Given I am at the home page
     When I look for "kindle fire" in the search bar
     And I choose the "kindle fire hd" item in the suggestion dropdown
-    Then the page returns the result for "kindle fire hd"
+    Then the page returns the result for "kindle fire 7"

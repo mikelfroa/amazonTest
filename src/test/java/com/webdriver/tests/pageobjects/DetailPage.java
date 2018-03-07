@@ -1,5 +1,6 @@
 package com.webdriver.tests.pageobjects;
 
+import com.webdriver.tests.utility.Constant;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +19,7 @@ public class DetailPage extends BasePage{
 
     public boolean prodTitleIsDisplayed(){
         new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOf(text_title));
-        return text_title.getText().equalsIgnoreCase(GeneralUtils.title);
+        return text_title.getText().equalsIgnoreCase(Constant.title);
     }
 
 

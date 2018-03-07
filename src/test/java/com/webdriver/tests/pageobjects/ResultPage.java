@@ -1,11 +1,11 @@
 package com.webdriver.tests.pageobjects;
 
+import com.webdriver.tests.utility.Constant;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 import java.util.Random;
 
@@ -13,7 +13,7 @@ public class ResultPage extends BasePage{
 
 
     //Field results
-    @FindBy(id = "s-result-count")
+    @FindBy(id = "nav-flyout-searchAjax")
     private WebElement fld_results;
 
     //WebEl Best Seller
@@ -45,8 +45,8 @@ public class ResultPage extends BasePage{
             System.out.println(element.getText());
         }
 
-        GeneralUtils.title = random.getText();
-        System.out.println("GeneralUtils.title " + GeneralUtils.title);
+        Constant.title = random.getText();
+        System.out.println("GeneralUtils.title " + Constant.title);
         random.click();
 
     }

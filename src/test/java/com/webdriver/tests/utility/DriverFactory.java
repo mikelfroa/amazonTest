@@ -5,18 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-import java.net.MalformedURLException;
-
 public class DriverFactory {
 
     private static WebDriver driver;
 
-    public DriverFactory() throws MalformedURLException {
+    public DriverFactory() {
         initialize();
     }
 
-    public void initialize() throws MalformedURLException {
+    public void initialize()  {
         if (driver == null)
             createNewDriverInstance();
     }
@@ -24,7 +21,7 @@ public class DriverFactory {
     private void createNewDriverInstance() {
         String browserName = (System.getProperty("browser"));
         if (browserName == null ){
-            browserName = "chrome";
+            browserName = "firefox";
         }
         switch (browserName) {
             case "firefox":

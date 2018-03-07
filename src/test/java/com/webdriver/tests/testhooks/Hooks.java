@@ -1,6 +1,5 @@
 package com.webdriver.tests.testhooks;
 
-import com.webdriver.tests.stepdefinitions.Navigation;
 import com.webdriver.tests.utility.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -18,7 +17,7 @@ public class Hooks  {
 
     @Before("@GoHomePage")
     public void setupHomePage() throws Throwable {
-        Navigation.goToPage("HomePage");
+        driver.get("https://www.amazon.co.uk");
 
     }
 
